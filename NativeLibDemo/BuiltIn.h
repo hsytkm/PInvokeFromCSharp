@@ -2,10 +2,14 @@
 
 #include "Common.h"
 
-DllExport int GetInt() {
-	return 123;
+DllExport int BuiltIn_GetInt() {
+	return 1234;
 }
 
-DllExport double GetDouble() {
+DllExport double BuiltIn_GetDouble() {
 	return 12.34;
+}
+
+DllExport double BuiltIn_AddIntDouble(int i, double d) {
+	return static_cast<double>(i) + d;
 }

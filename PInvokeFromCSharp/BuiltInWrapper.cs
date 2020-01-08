@@ -8,11 +8,14 @@ namespace PInvokeFromCSharp
     {
         private const string DllFile = "NativeLibDemo.dll";
 
-        [DllImport(DllFile, EntryPoint = "GetInt")]
+        [DllImport(DllFile, EntryPoint = "BuiltIn_GetInt")]
         internal extern static int GetInt();
 
-        [DllImport(DllFile, EntryPoint = "GetDouble")]
+        [DllImport(DllFile, EntryPoint = "BuiltIn_GetDouble")]
         internal extern static double GetDouble();
+
+        [DllImport(DllFile, EntryPoint = "BuiltIn_AddIntDouble")]
+        internal extern static double AddIntDouble(int i, double d);
 
     }
 
@@ -20,13 +23,14 @@ namespace PInvokeFromCSharp
     {
         public void DoTest()
         {
-            var i = NativeBuiltInFunctions.GetInt();
-            Debug.Assert(i == 123);
+            var i0 = NativeBuiltInFunctions.GetInt();
+            Debug.Assert(i0 == 1234);
 
-            var d = NativeBuiltInFunctions.GetDouble();
-            Debug.Assert(d == 12.34);
+            var d0 = NativeBuiltInFunctions.GetDouble();
+            Debug.Assert(d0 == 12.34);
 
-
+            var d1 = NativeBuiltInFunctions.AddIntDouble(11, 1.34);
+            Debug.Assert(d1 == 12.34);
         }
     }
 

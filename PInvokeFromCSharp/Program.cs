@@ -6,9 +6,11 @@ namespace PInvokeFromCSharp
     {
         static void Main(string[] args)
         {
-            var wrappers = new[]
+            var wrappers = new INativeWrapper[]
             {
                 new BuiltInWrapper(),
+                new BoolWrapper(),
+
             };
 
             foreach (var wrapper in wrappers)
@@ -16,7 +18,7 @@ namespace PInvokeFromCSharp
                 wrapper.DoTest();
             }
 
-            Console.WriteLine("Finish!!!");
+            Console.WriteLine("Success!!");
         }
     }
 }
