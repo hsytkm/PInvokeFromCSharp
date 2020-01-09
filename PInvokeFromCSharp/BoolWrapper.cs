@@ -6,11 +6,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeBoolInFunctions
     {
-        private const string DllFile = "NativeLibDemo.dll";
-
-        [DllImport(DllFile, EntryPoint = "Bool_GetFalse")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal extern static bool GetFalse();
+        private const string DllFile = Program.DllFile;
 
         [DllImport(DllFile, EntryPoint = "Bool_GetTrue")]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -26,12 +22,6 @@ namespace PInvokeFromCSharp
             [MarshalAs(UnmanagedType.Bool)]bool b0,
             [MarshalAs(UnmanagedType.Bool)]bool b1);
 
-        [DllImport(DllFile, EntryPoint = "Bool_Or")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal extern static bool Or(
-            [MarshalAs(UnmanagedType.Bool)]bool b0,
-            [MarshalAs(UnmanagedType.Bool)]bool b1);
-
     }
 
     internal class BoolWrapper : INativeWrapper
@@ -40,9 +30,6 @@ namespace PInvokeFromCSharp
         {
             // Out
             {
-                var b0 = NativeBoolInFunctions.GetFalse();
-                Debug.Assert(b0 == false);
-
                 var b1 = NativeBoolInFunctions.GetTrue();
                 Debug.Assert(b1 == true);
 
@@ -65,16 +52,6 @@ namespace PInvokeFromCSharp
 
                 var b12 = NativeBoolInFunctions.And(false, false);
                 Debug.Assert(b12 == false);
-
-                // Or
-                var b20 = NativeBoolInFunctions.Or(true, true);
-                Debug.Assert(b20 == true);
-
-                var b21 = NativeBoolInFunctions.Or(true, false);
-                Debug.Assert(b21 == true);
-
-                var b22 = NativeBoolInFunctions.Or(false, false);
-                Debug.Assert(b22 == false);
             }
 
 

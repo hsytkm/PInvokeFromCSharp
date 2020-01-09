@@ -6,7 +6,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeBuiltInFunctions
     {
-        private const string DllFile = "NativeLibDemo.dll";
+        private const string DllFile = Program.DllFile;
 
         [DllImport(DllFile, EntryPoint = "BuiltIn_GetInt")]
         internal extern static int GetInt();

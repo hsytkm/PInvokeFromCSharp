@@ -29,6 +29,12 @@
     <ClInclude Include="Bool.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StringIn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringOut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
