@@ -155,9 +155,12 @@
     <ClInclude Include="BuiltIn.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="MemFromLib.h" />
+    <ClInclude Include="MemToLib.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="StringIn.h" />
     <ClInclude Include="StringOut.h" />
+    <ClInclude Include="StringOutToMem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

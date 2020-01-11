@@ -1,5 +1,8 @@
 #pragma once
 
+/*--------------------------------
+	C#‚©‚çC++‚É•¶š—ñ‚ğ“n‚·
+ --------------------------------*/
 #include "Common.h"
 #include <string>
 //#include <Windows.h>	//LPCWSTR
@@ -13,13 +16,12 @@ DllExport int StringIn_CountChar(const char *c) {
 // “ú–{Œêƒ_ƒ
 DllExport int StringIn_CountStdString(const char* c) {
 	std::string str(c);
-	size_t size = str.size();	// .length() ‚Æ“¯‚¶
+	size_t size = str.size();	// size() ‚Í length() ‚Æ“¯‚¶‚Á‚Û‚¢
 	return static_cast<int>(size);
 }
 
 // “ú–{ŒêOK
-DllExport int StringIn_CountWChar(const wchar_t* str) {
-	// const wchar_t* = LPCWSTR
+DllExport int StringIn_CountWChar(const wchar_t* str) { // const wchar_t* = LPCWSTR
 	size_t size = wcslen(str);
 	return static_cast<int>(size);
 }

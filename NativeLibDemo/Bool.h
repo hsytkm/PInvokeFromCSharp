@@ -7,7 +7,10 @@ DllExport bool Bool_GetTrue() {
 }
 
 DllExport bool Bool_Not(bool b) {
-	return !b;
+	if (b == true)
+		return false;
+	else
+		return true;
 }
 
 DllExport bool Bool_And(bool b0, bool b1) {

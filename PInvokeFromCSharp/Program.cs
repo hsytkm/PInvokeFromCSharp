@@ -13,7 +13,10 @@ namespace PInvokeFromCSharp
                 new BuiltInWrapper(),
                 new BoolWrapper(),
                 new StringInWrapper(),
-                new StringOutWrapper(),     // need unsafe
+                new StringOutWrapper(),
+                new StringOutToMemWrapper(),
+                new MemFromLibWrapper(),
+                new MemToLibWrapper(),
             };
 
             foreach (var wrapper in wrappers)

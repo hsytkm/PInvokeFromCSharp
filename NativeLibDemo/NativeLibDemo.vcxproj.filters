@@ -35,6 +35,15 @@
     <ClInclude Include="StringOut.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MemFromLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemToLib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringOutToMem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
