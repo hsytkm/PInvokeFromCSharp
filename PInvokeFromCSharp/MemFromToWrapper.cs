@@ -47,7 +47,7 @@ namespace PInvokeFromCSharp
         }
     }
 
-    internal static class NativeMemToLibFunctions
+    internal static class NativeMemToLibMethods
     {
         private const string DllFile = Program.DllFile;
 
@@ -57,7 +57,6 @@ namespace PInvokeFromCSharp
         [DllImport(DllFile, EntryPoint = "MemToLib_SetBufferLast")]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal extern static bool SetBufferLast(ref MemoryDataToLib data, byte val);
-
     }
 
     internal class MemToLibWrapper : INativeWrapper
@@ -67,17 +66,17 @@ namespace PInvokeFromCSharp
             using var container = new MemoryDataToLibContainer(10_000_000);
             var payload = container.Payload;
 
-            // 先頭に23書いた状態で渡して、末尾に100書いてもらう
+            // 先頭だけ値を書いておく
             Marshal.WriteByte(payload.Ptr, 23);
 
-            // メモリ内の合計値を計算させる
-            int sum1 = NativeMemToLibFunctions.GetBufferDataSum(ref payload);
+            // Libにメモリ内の合計値を計算させる
+            int sum1 = NativeMemToLibMethods.GetBufferDataSum(ref payload);
             Debug.Assert(sum1 == 23);
 
 
             // ◆ここの戻り値が false のはずなのに、常に true が返ってくる。
             //   原因が分からなかった… int なら意図通りの値が返ってくる。
-            bool err = NativeMemToLibFunctions.SetBufferLast(ref payload, 100);
+            bool err = NativeMemToLibMethods.SetBufferLast(ref payload, 100);
             //Debug.Assert(err == false);   // ◆意図通りに動かないのでチェックしない
 
             var sum = payload.GetByteSum();
@@ -85,5 +84,4 @@ namespace PInvokeFromCSharp
 
         }
     }
-
 }

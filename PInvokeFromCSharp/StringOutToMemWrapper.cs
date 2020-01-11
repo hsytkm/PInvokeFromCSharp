@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PInvokeFromCSharp
 {
-    internal static class NativeStringOutToMemFunctions
+    internal static class NativeStringOutToMemMethods
     {
         private const string DllFile = Program.DllFile;
 
@@ -16,6 +16,7 @@ namespace PInvokeFromCSharp
             [MarshalAs(UnmanagedType.LPUTF8Str), Out] StringBuilder str,
             int length);
 
+        // ◆Unicodeを受け取れていない。文字化してる。
         [DllImport(DllFile, EntryPoint = "StringOutToMem_GetMessageJp", CharSet = CharSet.Unicode)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal extern static bool GetMessageJp(
@@ -45,7 +46,6 @@ namespace PInvokeFromCSharp
             return buff.ToString();
         }
 
-
         /// <summary>ライブラリとの文字列入出力</summary>
         internal static string GetString2(Func<string, StringBuilder, int, bool> func, string src, int capacity = 256)
         {
@@ -64,23 +64,21 @@ namespace PInvokeFromCSharp
         public void DoTest()
         {
             // From Library
-            var str_en0 = NativeStringOutToMemFunctions.GetString1(NativeStringOutToMemFunctions.GetMessageEn);
-            var str_jp0 = NativeStringOutToMemFunctions.GetString1(NativeStringOutToMemFunctions.GetMessageJp);
+            var str_en0 = NativeStringOutToMemMethods.GetString1(NativeStringOutToMemMethods.GetMessageEn);
+            var str_jp0 = NativeStringOutToMemMethods.GetString1(NativeStringOutToMemMethods.GetMessageJp);
 
             // To/From Library
             {
                 var lower = str_en0;
-                var upper = NativeStringOutToMemFunctions.GetString2(NativeStringOutToMemFunctions.ToUpper, lower);
+                var upper = NativeStringOutToMemMethods.GetString2(NativeStringOutToMemMethods.ToUpper, lower);
                 Debug.Assert(upper == lower.ToUpper());
             }
 
             // システムディレクトリPATH
             var sb = new StringBuilder(new string('0', 256));
-            var ret = NativeStringOutToMemFunctions.GetSystemDirectoryA(sb, (uint)sb.Capacity);
+            var ret = NativeStringOutToMemMethods.GetSystemDirectoryA(sb, (uint)sb.Capacity);
             var strlib = sb.ToString();
             Debug.Assert(strlib == Environment.SystemDirectory);
-
         }
     }
-
 }

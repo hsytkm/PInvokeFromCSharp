@@ -5,7 +5,7 @@ namespace PInvokeFromCSharp
     // 方針 P/Invoke を unsafe で使う
     class Program
     {
-        public const string DllFile = "NativeLibDemo.dll";
+        internal const string DllFile = "NativeLibDemo.dll";
 
         static void Main(string[] args)
         {

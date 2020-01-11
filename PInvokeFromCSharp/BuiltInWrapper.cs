@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace PInvokeFromCSharp
 {
-    internal static class NativeBuiltInFunctions
+    internal static class NativeBuiltInMethods
     {
         private const string DllFile = Program.DllFile;
 
@@ -28,7 +28,6 @@ namespace PInvokeFromCSharp
 
         [DllImport(DllFile, EntryPoint = "BuiltIn_AddIntDouble")]
         internal extern static double AddIntDouble(int i, double d);
-
     }
 
     internal class BuiltInWrapper : INativeWrapper
@@ -36,25 +35,24 @@ namespace PInvokeFromCSharp
         public void DoTest()
         {
             // int
-            var i0 = NativeBuiltInFunctions.GetInt();
+            var i0 = NativeBuiltInMethods.GetInt();
             Debug.Assert(i0 == 1234);
-            Debug.Assert(int.MinValue == NativeBuiltInFunctions.GetIntMin());
-            Debug.Assert(int.MaxValue == NativeBuiltInFunctions.GetIntMax());
+            Debug.Assert(int.MinValue == NativeBuiltInMethods.GetIntMin());
+            Debug.Assert(int.MaxValue == NativeBuiltInMethods.GetIntMax());
 
             // byte
-            Debug.Assert(byte.MaxValue == NativeBuiltInFunctions.GetByteMax());
+            Debug.Assert(byte.MaxValue == NativeBuiltInMethods.GetByteMax());
 
             // ulong
-            Debug.Assert(ulong.MaxValue == NativeBuiltInFunctions.GetUInt64Max());
+            Debug.Assert(ulong.MaxValue == NativeBuiltInMethods.GetUInt64Max());
 
             // double
-            var d0 = NativeBuiltInFunctions.GetDouble();
+            var d0 = NativeBuiltInMethods.GetDouble();
             Debug.Assert(d0 == 12.34);
 
             // Add
-            var d1 = NativeBuiltInFunctions.AddIntDouble(11, 1.34);
+            var d1 = NativeBuiltInMethods.AddIntDouble(11, 1.34);
             Debug.Assert(d1 == 12.34);
         }
     }
-
 }

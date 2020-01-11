@@ -21,7 +21,6 @@ namespace ClassDispose {
 			for (int i = 0; i < dataSize; i++) {
 				data[i] = i;
 			}
-
 			dataPtr = data;
 		}
 
@@ -44,20 +43,10 @@ namespace ClassDispose {
 	};
 }
 
-
 /*------------------------------------------------
 	Facade
  ------------------------------------------------*/
 using namespace ClassDispose;
-
-template <class T> void SafeDelete(T** ppT)
-{
-	if (*ppT != nullptr)
-	{
-		delete* ppT;
-		*ppT = nullptr;
-	}
-}
 
 DllExport LibBuffer* CreateLibBufferClass()
 {

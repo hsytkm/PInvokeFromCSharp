@@ -98,6 +98,5 @@ namespace PInvokeFromCSharp
             // GC.SuppressFinalize(this);
         }
         #endregion
-
     }
 }

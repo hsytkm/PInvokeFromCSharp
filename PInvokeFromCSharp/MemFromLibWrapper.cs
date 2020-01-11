@@ -25,7 +25,7 @@ namespace PInvokeFromCSharp
         }
     }
 
-    internal static class NativeMemFromLibFunctions
+    internal static class NativeMemFromLibMethods
     {
         private const string DllFile = Program.DllFile;
 
@@ -43,16 +43,14 @@ namespace PInvokeFromCSharp
             // 各メソッド呼ぶと、byte のSumが 123 になる巨大メモリが返ってくる
 
             // 値戻り
-            var data0 = NativeMemFromLibFunctions.GetBufferDataValue();
+            var data0 = NativeMemFromLibMethods.GetBufferDataValue();
             var sum0 = data0.GetByteSum();
             Debug.Assert(sum0 == 123);
 
             // 参照戻り： data1の型(var)に ref 付いてない理由が謎。値戻しの方が良さそう
-            var data1 = NativeMemFromLibFunctions.GetBufferDataRef();
+            var data1 = NativeMemFromLibMethods.GetBufferDataRef();
             var sum1 = data1.GetByteSum();
             Debug.Assert(sum1 == 123);
-
         }
     }
-
 }

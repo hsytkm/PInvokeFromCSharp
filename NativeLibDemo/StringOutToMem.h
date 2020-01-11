@@ -47,7 +47,6 @@ DllExport bool StringOutToMem_GetMessageEn(char* dest, int destLength) {
 
 // 日本語を返す
 DllExport bool StringOutToMem_GetMessageJp(char* dest, int destLength) {
-	// ◆日本語を返せてない
 	return SetStringToCharArray("こんにちわ！私はライブラリです！", dest, destLength);
 }
 

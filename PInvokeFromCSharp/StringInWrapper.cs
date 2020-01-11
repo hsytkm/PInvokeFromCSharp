@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace PInvokeFromCSharp
 {
-    internal static class NativeStringInFunctions
+    internal static class NativeStringInMethods
     {
         private const string DllFile = Program.DllFile;
 
@@ -31,42 +31,42 @@ namespace PInvokeFromCSharp
 
             // char*
             {
-                var e0 = NativeStringInFunctions.CountChar(str_en0);
+                var e0 = NativeStringInMethods.CountChar(str_en0);
                 Debug.Assert(e0 == str_en0.Length);
 
-                var e1 = NativeStringInFunctions.CountChar(str_en1);
+                var e1 = NativeStringInMethods.CountChar(str_en1);
                 Debug.Assert(e1 == str_en1.Length);
 
                 // 日本語は数えられない
-                var j0 = NativeStringInFunctions.CountChar(str_jp0);
+                var j0 = NativeStringInMethods.CountChar(str_jp0);
                 //Debug.Assert(j0 == str_jp0.Length);    
             }
 
             // std::string
             {
-                var se0 = NativeStringInFunctions.CountStdString(str_en0);
+                var se0 = NativeStringInMethods.CountStdString(str_en0);
                 Debug.Assert(se0 == str_en0.Length);
 
-                var se1 = NativeStringInFunctions.CountStdString(str_en1);
+                var se1 = NativeStringInMethods.CountStdString(str_en1);
                 Debug.Assert(se1 == str_en1.Length);
 
                 // 日本語は数えられない
-                var sj0 = NativeStringInFunctions.CountStdString(str_jp0);
+                var sj0 = NativeStringInMethods.CountStdString(str_jp0);
                 //Debug.Assert(sj0 == str_jp0.Length);    
             }
 
             // wchar*
             {
-                var we0 = NativeStringInFunctions.CountWChar(str_en0);
+                var we0 = NativeStringInMethods.CountWChar(str_en0);
                 Debug.Assert(we0 == str_en0.Length);
 
-                var we1 = NativeStringInFunctions.CountWChar(str_en1);
+                var we1 = NativeStringInMethods.CountWChar(str_en1);
                 Debug.Assert(we1 == str_en1.Length);
 
-                var wj0 = NativeStringInFunctions.CountWChar(str_jp0);
+                var wj0 = NativeStringInMethods.CountWChar(str_jp0);
                 Debug.Assert(wj0 == str_jp0.Length);
 
-                var wj1 = NativeStringInFunctions.CountWChar(str_jp1);
+                var wj1 = NativeStringInMethods.CountWChar(str_jp1);
                 Debug.Assert(wj1 == str_jp1.Length);
             }
         }
