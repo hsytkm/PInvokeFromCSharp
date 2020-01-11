@@ -44,6 +44,9 @@
     <ClInclude Include="StringOutToMem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ClassDisposeLibBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

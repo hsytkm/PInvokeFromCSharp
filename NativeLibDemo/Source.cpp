@@ -7,3 +7,4 @@
 #include "StringOutToMem.h"
 #include "MemFromLib.h"
 #include "MemToLib.h"
+#include "ClassDisposeLibBuffer.h"
