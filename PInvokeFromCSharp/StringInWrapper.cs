@@ -8,15 +8,19 @@ namespace PInvokeFromCSharp
     {
         private const string DllFile = Program.DllFile;
 
-        [DllImport(DllFile, EntryPoint = "StringIn_CountChar", CharSet = CharSet.Unicode)]
+        [DllImport(DllFile, EntryPoint = "StringIn_AnsiCountChar", CharSet = CharSet.Ansi)]
+        internal extern static int CountCharAnsi(
+            [MarshalAs(UnmanagedType.LPStr), In]string s);
+
+        [DllImport(DllFile, EntryPoint = "StringIn_UnicodeCountChar", CharSet = CharSet.Unicode)]
         internal extern static int CountChar(
             [MarshalAs(UnmanagedType.LPUTF8Str), In]string s);
 
-        [DllImport(DllFile, EntryPoint = "StringIn_CountStdString", CharSet = CharSet.Unicode)]
+        [DllImport(DllFile, EntryPoint = "StringIn_UnicodeCountStdString", CharSet = CharSet.Unicode)]
         internal extern static int CountStdString(
             [MarshalAs(UnmanagedType.LPUTF8Str), In]string s);
 
-        [DllImport(DllFile, EntryPoint = "StringIn_CountWChar", CharSet = CharSet.Unicode)]
+        [DllImport(DllFile, EntryPoint = "StringIn_UnicodeCountWChar", CharSet = CharSet.Unicode)]
         internal extern static int CountWChar(string s);
     }
 
@@ -28,6 +32,17 @@ namespace PInvokeFromCSharp
             var str_en1 = "#$%&(";
             var str_jp0 = "あ井ウゑヲ";
             var str_jp1 = "◆～♪┗¶〇";
+
+            // Ansi
+            {
+                var path = Environment.SystemDirectory;
+                var cnt0 = NativeStringInMethods.CountCharAnsi(path);
+                Debug.Assert(cnt0 == path.Length);
+
+                // 日本語だと文字数が2倍になるっぽい
+                var cnt1 = NativeStringInMethods.CountCharAnsi(str_jp0);
+                //Debug.Assert(cnt1 == str_jp0.Length);
+            }
 
             // char*
             {
