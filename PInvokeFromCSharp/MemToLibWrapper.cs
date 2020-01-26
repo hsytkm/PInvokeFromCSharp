@@ -31,19 +31,19 @@ namespace PInvokeFromCSharp
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     internal readonly struct MemoryDataToLibContainer : IDisposable
     {
-        private readonly IntPtr UnmanagedPtr;
         public readonly MemoryDataToLib Payload;
+        private readonly IntPtr UnmanagedPtr;
 
         public MemoryDataToLibContainer(int size)
         {
-            UnmanagedPtr = Marshal.AllocHGlobal(size);
+            UnmanagedPtr = Marshal.AllocCoTaskMem(size);    // AllocHGlobal()
             Payload = new MemoryDataToLib(UnmanagedPtr, size);
         }
 
         public void Dispose()
         {
             if (UnmanagedPtr != IntPtr.Zero)
-                Marshal.FreeHGlobal(UnmanagedPtr);
+                Marshal.FreeCoTaskMem(UnmanagedPtr);        // FreeHGlobal()
         }
     }
 
