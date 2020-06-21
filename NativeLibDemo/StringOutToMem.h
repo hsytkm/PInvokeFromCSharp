@@ -42,12 +42,28 @@ bool SetStringToCharArray(const char* src, char* dest, int destLength) {
 
 // アルファベットを返す
 DllExport bool StringOutToMem_GetMessageEn(char* dest, int destLength) {
-	return SetStringToCharArray("Hello, I'm Library!", dest, destLength);
+	bool err = SetStringToCharArray("Hello, I'm Library!", dest, destLength);
+	
+#ifndef _DEBUG
+	// VisualStudio2019 16.6.2 の Releaseビルドだと、
+	// Sleep入れないと戻り値が true(エラーあり)になる。 なぜ？最適化ミス？
+	Sleep(1);
+#endif
+
+	return err;
 }
 
 // 日本語を返す
 DllExport bool StringOutToMem_GetMessageJp(char* dest, int destLength) {
-	return SetStringToCharArray("こんにちわ！私はライブラリです！", dest, destLength);
+	bool err = SetStringToCharArray("こんにちわ！私はライブラリです！", dest, destLength);
+
+#ifndef _DEBUG
+	// VisualStudio2019 16.6.2 の Releaseビルドだと、
+	// Sleep入れないと戻り値が true(エラーあり)になる。 なぜ？最適化ミス？
+	Sleep(1);
+#endif
+
+	return err;
 }
 
 // アルファベットの大文字化
