@@ -4,23 +4,27 @@
 
 Created in 2020/01
 
-##@PInvokeFromCSharp
+## PInvokeFromCSharp
 
 Call CppNative.dll using P/Invoke.
 
 If CSharp.exe cannot find CppNative.dll at startup, CSharp.exe throw System.DllNotFoundException.
 
+## DelegateCSharp
+
+Call CppNative.dll using Delegate
+
 
 ## Reference web pages
 
-[yWindows/C#z‚È‚é‚×‚­’š”J‚ÉDllImport‚ğg‚¤] (https://qiita.com/mitsu_at3/items/94807ee0b3bf34ffb6b2)
+[ã€Windows/C#ã€‘ãªã‚‹ã¹ãä¸å¯§ã«DllImportã‚’ä½¿ã†] (https://qiita.com/mitsu_at3/items/94807ee0b3bf34ffb6b2)
 
-[ƒƒ“ƒo‚É”z—ñ‚ğ‚Â\‘¢‘Ì‚Ìƒ}[ƒVƒƒƒŠƒ“ƒO] (http://krdlab.hatenablog.com/entry/20061211/1165768253)
+[ãƒ¡ãƒ³ãƒã«é…åˆ—ã‚’æŒã¤æ§‹é€ ä½“ã®ãƒãƒ¼ã‚·ãƒ£ãƒªãƒ³ã‚°] (http://krdlab.hatenablog.com/entry/20061211/1165768253)
 
 [CallingConvention Enum] (https://docs.microsoft.com/ja-jp/dotnet/api/system.runtime.interopservices.callingconvention)
 
-[.NET Core 3.0 ‚Å WinForms / WPF ‚ğg‚¤ê‡‚ÍÀsƒtƒ@ƒCƒ‹‚ÌƒpƒX‚É’ˆÓ] (https://blog.shibayan.jp/entry/20190909/1568007641)
+[.NET Core 3.0 ã§ WinForms / WPF ã‚’ä½¿ã†å ´åˆã¯å®Ÿè¡Œãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹ã«æ³¨æ„] (https://blog.shibayan.jp/entry/20190909/1568007641)
 
-[C# - DLLImport‚ğg‚í‚¸DLL‚ğ“®“I‚ÉŒÄ‚Ño‚·] (https://qiita.com/radian-jp/items/2f3bdba833b27c79895c)
+[C# - DLLImportã‚’ä½¿ã‚ãšDLLã‚’å‹•çš„ã«å‘¼ã³å‡ºã™] (https://qiita.com/radian-jp/items/2f3bdba833b27c79895c)
 
-ˆÈã
+ä»¥ä¸Š
