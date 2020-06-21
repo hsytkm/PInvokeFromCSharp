@@ -41,7 +41,7 @@ namespace PInvokeFromCSharp
 
             if (func.Invoke(buff, buff.Capacity))
             {
-                throw new ExternalException($"String buffer is short. ({buff.ToString()})");
+                throw new ExternalException($"String buffer is short. ({buff})");
             }
             return buff.ToString();
         }
@@ -53,7 +53,7 @@ namespace PInvokeFromCSharp
 
             if (func.Invoke(src, buff, buff.Capacity))
             {
-                throw new ExternalException($"String buffer is short. ({buff.ToString()})");
+                throw new ExternalException($"String buffer is short. ({buff})");
             }
             return buff.ToString();
         }

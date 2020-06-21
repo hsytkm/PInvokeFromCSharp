@@ -29,7 +29,7 @@ namespace PInvokeFromCSharp
                     d.Dispose();
             }
 
-            Console.WriteLine("Success!!");
+            Console.WriteLine("Success! (If there are errors, ASSERT will be displayed.)");
         }
     }
 }
