@@ -1,35 +1,42 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace PInvokeFromCSharp
 {
     // 方針 P/Invoke を unsafe で使う
     class Program
     {
-        internal const string DllFile = "NativeLibDemo.dll";
-
         static void Main(string[] args)
         {
-            var wrappers = new INativeWrapper[]
+            Console.WriteLine("Start");
+
+            if (!DllLocator.AddDllLocationDirectory("bin"))
+                Debug.WriteLine($"AddDllLocationDirectory() Failed...");
+
+            var wrapperTypes = new []
             {
-                new BuiltInWrapper(),
-                new BoolWrapper(),
-                new StringInWrapper(),
-                new StringOutWrapper(),
-                new StringOutToMemWrapper(),
-                new MemFromLibWrapper(),
-                new MemToLibWrapper(),
-                new ClassDisposeWrapper(),
+                typeof(BuiltInWrapper),
+                typeof(BoolWrapper),
+                typeof(StringInWrapper),
+                typeof(StringOutWrapper),
+                typeof(StringOutToMemWrapper),
+                typeof(MemFromLibWrapper),
+                typeof(MemToLibWrapper),
+                typeof(ClassDisposeWrapper),
             };
 
-            foreach (var wrapper in wrappers)
+            foreach (var type in wrapperTypes)
             {
-                wrapper.DoTest();
+                if (Activator.CreateInstance(type) is INativeWrapper wrapper)
+                {
+                    wrapper.DoTest();
 
-                if (wrapper is IDisposable d)
-                    d.Dispose();
+                    if (wrapper is IDisposable d)
+                        d.Dispose();
+                }
             }
 
-            Console.WriteLine("Success! (If there are errors, ASSERT will be displayed.)");
+            Console.WriteLine("Success! (If there are errors, Assertion will be displayed.)");
         }
     }
 }

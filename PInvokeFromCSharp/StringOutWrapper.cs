@@ -6,7 +6,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeStringOutMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "StringOut_GetConstMessagePtr")]
         internal extern static IntPtr GetConstMessagePtr();

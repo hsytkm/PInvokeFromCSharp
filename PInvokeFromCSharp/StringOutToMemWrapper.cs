@@ -7,7 +7,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeStringOutToMemMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         // ◆unsafeなしで何とかならないのか…
         [DllImport(DllFile, EntryPoint = "StringOutToMem_GetMessageEn", CharSet = CharSet.Unicode)]

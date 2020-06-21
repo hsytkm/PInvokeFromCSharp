@@ -21,7 +21,7 @@ namespace PInvokeFromCSharp
 
     internal static class NativeLibBufferMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "CreateLibBufferClass")]
         public static extern NativeLibBufferHandle CreateLibBuffer();

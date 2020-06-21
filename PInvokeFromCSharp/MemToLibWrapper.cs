@@ -49,7 +49,7 @@ namespace PInvokeFromCSharp
 
     internal static class NativeMemToLibMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "MemToLib_GetBufferDataSum")]
         internal extern static int GetBufferDataSum(ref MemoryDataToLib data);

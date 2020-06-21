@@ -6,7 +6,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeStringInMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "StringIn_AnsiCountChar", CharSet = CharSet.Ansi)]
         internal extern static int CountCharAnsi(

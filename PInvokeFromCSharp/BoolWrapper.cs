@@ -6,7 +6,7 @@ namespace PInvokeFromCSharp
 {
     internal static class NativeBoolInMethods
     {
-        private const string DllFile = Program.DllFile;
+        private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "Bool_GetTrue")]
         [return: MarshalAs(UnmanagedType.Bool)]
