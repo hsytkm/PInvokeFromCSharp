@@ -34,25 +34,33 @@ namespace PInvokeFromCSharp
     {
         public void DoTest()
         {
-            // int
-            var i0 = NativeBuiltInMethods.GetInt();
-            Debug.Assert(i0 == 1234);
-            Debug.Assert(int.MinValue == NativeBuiltInMethods.GetIntMin());
-            Debug.Assert(int.MaxValue == NativeBuiltInMethods.GetIntMax());
+            try
+            {
+                // int
+                var i0 = NativeBuiltInMethods.GetInt();
+                Debug.Assert(i0 == 1234);
+                Debug.Assert(int.MinValue == NativeBuiltInMethods.GetIntMin());
+                Debug.Assert(int.MaxValue == NativeBuiltInMethods.GetIntMax());
 
-            // byte
-            Debug.Assert(byte.MaxValue == NativeBuiltInMethods.GetByteMax());
+                // byte
+                Debug.Assert(byte.MaxValue == NativeBuiltInMethods.GetByteMax());
 
-            // ulong
-            Debug.Assert(ulong.MaxValue == NativeBuiltInMethods.GetUInt64Max());
+                // ulong
+                Debug.Assert(ulong.MaxValue == NativeBuiltInMethods.GetUInt64Max());
 
-            // double
-            var d0 = NativeBuiltInMethods.GetDouble();
-            Debug.Assert(d0 == 12.34);
+                // double
+                var d0 = NativeBuiltInMethods.GetDouble();
+                Debug.Assert(d0 == 12.34);
 
-            // Add
-            var d1 = NativeBuiltInMethods.AddIntDouble(11, 1.34);
-            Debug.Assert(d1 == 12.34);
+                // Add
+                var d1 = NativeBuiltInMethods.AddIntDouble(11, 1.34);
+                Debug.Assert(d1 == 12.34);
+            }
+            catch (DllNotFoundException)
+            {
+                // DLL存在しなければ実行時例外になる
+                throw;
+            }
         }
     }
 }

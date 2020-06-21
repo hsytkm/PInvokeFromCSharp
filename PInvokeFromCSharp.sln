@@ -15,6 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateCSharp", "DelegateCSharp\DelegateCSharp.csproj", "{9E3C829C-355B-4814-87DC-D45258265109}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BF13B26E-2518-42B1-A955-AEC6211C647B} = {BF13B26E-2518-42B1-A955-AEC6211C647B}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +53,18 @@ Global
 		{BF13B26E-2518-42B1-A955-AEC6211C647B}.Release|x64.Build.0 = Release|x64
 		{BF13B26E-2518-42B1-A955-AEC6211C647B}.Release|x86.ActiveCfg = Release|Win32
 		{BF13B26E-2518-42B1-A955-AEC6211C647B}.Release|x86.Build.0 = Release|Win32
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|x64.Build.0 = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x64.ActiveCfg = Release|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x64.Build.0 = Release|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
