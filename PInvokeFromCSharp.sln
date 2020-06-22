@@ -15,10 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateCSharp", "DelegateCSharp\DelegateCSharp.csproj", "{9E3C829C-355B-4814-87DC-D45258265109}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateCSharp", "DelegateCSharp\DelegateCSharp.csproj", "{9E3C829C-355B-4814-87DC-D45258265109}"
 	ProjectSection(ProjectDependencies) = postProject
 		{BF13B26E-2518-42B1-A955-AEC6211C647B} = {BF13B26E-2518-42B1-A955-AEC6211C647B}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PInvokeFromCSharp.UnitTest", "PInvokeFromCSharp.UnitTest\PInvokeFromCSharp.UnitTest.csproj", "{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,18 @@ Global
 		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x64.Build.0 = Release|Any CPU
 		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x86.ActiveCfg = Release|Any CPU
 		{9E3C829C-355B-4814-87DC-D45258265109}.Release|x86.Build.0 = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|x64.Build.0 = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Debug|x86.Build.0 = Debug|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|x64.ActiveCfg = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|x64.Build.0 = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|x86.ActiveCfg = Release|Any CPU
+		{C2688D4E-F9F3-4F23-9B86-EBE3270B755A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

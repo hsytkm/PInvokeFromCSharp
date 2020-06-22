@@ -31,7 +31,7 @@ namespace PInvokeFromCSharp
             int outLength);
 
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Ansi)]
-        public static extern uint GetSystemDirectoryA(
+        internal static extern uint GetSystemDirectoryA(
                 [MarshalAs(UnmanagedType.LPStr)]StringBuilder lpBuffer, uint uSize);
 
         /// <summary>ライブラリからの文字列取得</summary>

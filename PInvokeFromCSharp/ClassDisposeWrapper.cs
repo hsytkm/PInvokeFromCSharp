@@ -24,16 +24,16 @@ namespace PInvokeFromCSharp
         private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "CreateLibBufferClass")]
-        public static extern NativeLibBufferHandle CreateLibBuffer();
+        internal static extern NativeLibBufferHandle CreateLibBuffer();
 
         [DllImport(DllFile, EntryPoint = "DisposeLibBufferClass")]
-        public static extern int DisposeLibBuffer(IntPtr ptr);
+        internal static extern int DisposeLibBuffer(IntPtr ptr);
 
         [DllImport(DllFile, EntryPoint = "LibBuffer_GetDataSum")]
-        public static extern int GetDataSum(NativeLibBufferHandle ptr);
+        internal static extern int GetDataSum(NativeLibBufferHandle ptr);
 
         [DllImport(DllFile, EntryPoint = "LibBuffer_GetDataSize")]
-        public static extern int GetDataSize(NativeLibBufferHandle ptr);
+        internal static extern int GetDataSize(NativeLibBufferHandle ptr);
     }
 
     internal class ClassDisposeWrapper : INativeWrapper, IDisposable

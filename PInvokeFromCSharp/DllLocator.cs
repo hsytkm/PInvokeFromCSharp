@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace PInvokeFromCSharp
 {
-    static class DllLocator
+    public static class DllLocator
     {
         internal const string DllFileName = "NativeLibDemo.dll";
 

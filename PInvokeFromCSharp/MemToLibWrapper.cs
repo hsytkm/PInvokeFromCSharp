@@ -70,8 +70,8 @@ namespace PInvokeFromCSharp
             Marshal.WriteByte(payload.Ptr, 23);
 
             // Libにメモリ内の合計値を計算させる
-            int sum1 = NativeMemToLibMethods.GetBufferDataSum(ref payload);
-            Debug.Assert(sum1 == 23);
+            int sum0 = NativeMemToLibMethods.GetBufferDataSum(ref payload);
+            Debug.Assert(sum0 == 23);
 
 
             // ◆ここの戻り値が false のはずなのに、常に true が返ってくる。
@@ -79,8 +79,8 @@ namespace PInvokeFromCSharp
             bool err = NativeMemToLibMethods.SetBufferLast(ref payload, 100);
             //Debug.Assert(err == false);   // ◆意図通りに動かないのでチェックしない
 
-            var sum = payload.GetByteSum();
-            Debug.Assert(sum == 123);
+            var sum1 = payload.GetByteSum();
+            Debug.Assert(sum1 == 123);
 
         }
     }

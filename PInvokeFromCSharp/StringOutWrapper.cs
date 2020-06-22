@@ -9,7 +9,9 @@ namespace PInvokeFromCSharp
         private const string DllFile = DllLocator.DllFileName;
 
         [DllImport(DllFile, EntryPoint = "StringOut_GetConstMessagePtr")]
-        internal extern static IntPtr GetConstMessagePtr();
+        private extern static IntPtr GetConstMessagePtr();
+        internal static string GetConstMessage() => Marshal.PtrToStringAnsi(GetConstMessagePtr());
+
     }
 
     internal class StringOutWrapper : INativeWrapper
@@ -17,8 +19,7 @@ namespace PInvokeFromCSharp
         public void DoTest()
         {
             // From Library (const message)
-            var ptr0 = NativeStringOutMethods.GetConstMessagePtr();
-            var msg0 = Marshal.PtrToStringAnsi(ptr0);
+            var msg0 = NativeStringOutMethods.GetConstMessage();
             Debug.Assert(msg0 == "This is const char*");
         }
     }
